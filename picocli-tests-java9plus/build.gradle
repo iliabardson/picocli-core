@@ -13,6 +13,7 @@ java {
 }
 
 test {
+    useJUnitPlatform()
 
 //    if (org.gradle.api.JavaVersion.current().isCompatibleWith(
 //        org.gradle.api.JavaVersion.VERSION_18)) {
