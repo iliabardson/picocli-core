@@ -485,6 +485,7 @@ public class HelpAnsiHeuristicsTest {
     @Test
     public void testAnsiAutoIfSystemPropertyPicocliAnsiCleared() throws Exception {
         withEnvironmentVariable("CLICOLOR_FORCE", "1")
+            .and("NO_COLOR", null)
             .execute(() -> {
                 restoreSystemProperties(() -> {
                     System.clearProperty("picocli.ansi");
@@ -496,6 +497,7 @@ public class HelpAnsiHeuristicsTest {
     @Test
     public void testAnsiAutoIfSystemPropertyPicocliAnsiIsAuto() throws Exception {
         withEnvironmentVariable("CLICOLOR_FORCE", "1")
+            .and("NO_COLOR", null)
             .execute(() -> {
                 restoreSystemProperties(() -> {
                     System.setProperty("picocli.ansi", "auto");
